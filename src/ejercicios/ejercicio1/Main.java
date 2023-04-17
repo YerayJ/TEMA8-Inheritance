@@ -1,7 +1,7 @@
-package ejercicio1;
+package ejercicios.ejercicio1;
 
 public class Main {
-    static Hora hora = new Hora(12,59);
+    static Hora hora = new Hora(0,0);
     static HoraExacta horaExacta = new HoraExacta(20,59,59);
 
     public static void main(String[] args) {

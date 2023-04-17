@@ -1,4 +1,4 @@
-package ejercicio1;
+package ejercicios.ejercicio1;
 
 /**
  * Clase hora exacta
@@ -51,6 +51,6 @@ public class HoraExacta extends Hora {
      */
     @Override
     public String toString() {
-        return super.toString() + ":" + (segundo <= 9 ? "0" + segundo : segundo);
+        return super.toString() + ":" + (this.segundo <= 9 ? "0" + this.segundo : this.segundo);
     }
 }

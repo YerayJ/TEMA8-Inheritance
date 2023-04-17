@@ -1,4 +1,4 @@
-package ejercicio1;
+package ejercicios.ejercicio1;
 
 /**
  * Clase Hora
@@ -72,6 +72,6 @@ public class Hora {
      * @return Devuelve una string
      */
     public String toString() {
-        return (hora <= 9 ? "0" + hora : hora) + ":" + (hora <= 9 ? "0" + minuto : minuto);
+        return (this.hora <= 9 ? "0" + this.hora : this.hora) + ":" + (this.hora <= 9 ? "0" + this.minuto : this.minuto);
     }
 }
