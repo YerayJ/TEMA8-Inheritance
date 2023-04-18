@@ -47,6 +47,6 @@ public class Empleado {
      */
     @Override
     public String toString() {
-        return "Nombre: " + nombre;
+        return "Empleado " + nombre;
     }
 }
