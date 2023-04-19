@@ -50,6 +50,7 @@ public class Electrodomestico {
 
     /**
      * Getter
+     *
      * @return Devuelve el precio base
      */
     public double getPrecioBase() {
@@ -58,6 +59,7 @@ public class Electrodomestico {
 
     /**
      * Getter
+     *
      * @return Devuelve el peso
      */
     public double getPeso() {
@@ -66,6 +68,7 @@ public class Electrodomestico {
 
     /**
      * Getter
+     *
      * @return Devuelve el color
      */
     public Colores getColor() {
@@ -74,6 +77,7 @@ public class Electrodomestico {
 
     /**
      * Getter
+     *
      * @return Devuelve el consumo energético
      */
     public ConsumoEnergetico getConsumo() {
@@ -94,7 +98,7 @@ public class Electrodomestico {
 
         // Comprueba que el color es correcto
         if (comprobarColor(color.toLowerCase())) {
-            this.color = Colores.valueOf(color); // Asigna el color de tipo enum
+            this.color = Colores.valueOf(color.toLowerCase()); // Asigna el color de tipo enum
         }
         // Comprueba que la letra es correcta
         if (comprobarConsumo(consumoEnergetico.charAt(0))) {
@@ -122,6 +126,7 @@ public class Electrodomestico {
 
     /**
      * Método que comprueba la letra de consumo energético
+     *
      * @param letra Contiene la letra
      * @return Devuelve la letra
      */
@@ -134,5 +139,45 @@ public class Electrodomestico {
         return comprueba; // Devuelve el atributo comprueba
     }
 
+    /**
+     * Método que calcula y devuelve el precio del electrodoméstico
+     *
+     * @return Devuelve el precio final
+     */
+    public double precioFinal() {
+        double incremento = 0; // Atributo que contiene el incremento
+        switch (consumo) { // Switch que coge como parámetro de entrada el consumo
+            case A -> {
+                incremento += 100;
+            }
+            case B -> {
+                incremento += 80;
+            }
+            case C -> {
+                incremento += 60;
+            }
+            case D -> {
+                incremento += 50;
+            }
+            case E -> {
+                incremento += 30;
+            }
+            case F -> {
+                incremento += 10;
+            }
+        }
+        // Comprueba en que peso está el electrodoméstico
+        if (peso >= 0 && peso <= 19) {
+            incremento += 10;
+        } else if (peso >= 20 && peso <= 49) {
+            incremento += 50;
+        } else if (peso >= 50 && peso <= 79) {
+            incremento += 80;
+        } else if (peso >= 80) {
+            incremento += 100;
+        }
+
+        return precioBase + incremento; // Devuelve el incremento
+    }
 
 }
