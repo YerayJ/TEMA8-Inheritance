@@ -30,8 +30,7 @@ abstract public class Poligono {
      * @return Devuelve una cadena
      */
     public String toString() {
-        return "Poligono " +
-                "número de lados: " + numeroLados;
+        return " Número de lados: " + numeroLados;
     }
 
     /**

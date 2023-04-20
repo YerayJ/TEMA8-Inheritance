@@ -1,16 +1,16 @@
 package ejercicios.ejercicio5;
 
-public class Rectangulo extends Poligono {
+public class Triangulo extends Poligono {
     /**
      * Atributos que contienen los lados
      */
-    private double lado1, lado2;
+    private double lado1, lado2, lado3;
 
     /**
      * Constructor por defecto
      */
-    public Rectangulo() {
-        super(4);
+    public Triangulo() {
+        super(3);
     }
 
     /**
@@ -18,8 +18,9 @@ public class Rectangulo extends Poligono {
      *
      * @param lado1 Contiene el primer lado
      * @param lado2 Contiene el segundo lado
+     * @param lado3 Contiene el tercer lado
      */
-    public Rectangulo(double lado1, double lado2) {
+    public Triangulo(double lado1, double lado2, double lado3) {
         // Le pasa por parámetros 4 lados
         super(4);
         // Comprueba que los lados no sean 0 o menos
@@ -31,6 +32,10 @@ public class Rectangulo extends Poligono {
             lado2 = 1;
         }
         this.lado2 = lado2;
+        if (lado3 <= 0) {
+            lado3 = 1;
+        }
+        this.lado3 = lado3;
     }
 
     /**
@@ -70,14 +75,31 @@ public class Rectangulo extends Poligono {
     }
 
     /**
+     * Getter
+     * @return Devuelve el lado 3
+     */
+    public double getLado3() {
+        return lado3;
+    }
+
+    /**
+     * Setter
+     * @param lado3 Devuelve el lado 3
+     */
+    public void setLado3(double lado3) {
+        this.lado3 = lado3;
+    }
+
+    /**
      * Método toString
      * @return Devuelve una string con todos los atributos
      */
     @Override
     public String toString() {
-        return " Rectángulo" +
+        return " Tríangulo" +
                 " Lado1 " + lado1 + " centímetros" +
                 " Lado2 " + lado2 + " centímetros" +
+                " Lado2 " + lado3 + " centímetros" +
                 super.toString();
     }
 
@@ -87,6 +109,6 @@ public class Rectangulo extends Poligono {
      */
     @Override
     double area() {
-        return lado1 * lado2; // Calcula el área multiplicando lado por lado
+        return (lado1+lado2+lado3)/2; // Calcula el área usando la fórmula del Herón
     }
 }
