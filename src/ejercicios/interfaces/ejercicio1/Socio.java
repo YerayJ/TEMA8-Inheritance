@@ -4,15 +4,15 @@ public class Socio implements Comparable {
     /**
      * Atributo que contiene el id del socio
      */
-    private int id;
+    int id;
     /**
      * Atributo que contiene el nombre
      */
-    private String nombre;
+    String nombre;
     /**
      * Atributo que contiene la edad
      */
-    private int edad;
+    int edad;
 
     /**
      * Constructor con parámetros
@@ -47,10 +47,15 @@ public class Socio implements Comparable {
     public int compareTo(Object o) {
         // Crea un atributo auxiliar que contiene el resultado
         int res = 0;
-        // Atributoq
+        // Cast a objeto Socio
         Socio socio = (Socio) o;
-
-
+        // Si al compararlo sale negativo significa que el primer id es mayor
+        if (this.id < socio.id) {
+            res = -1;
+        } else if (this.id > socio.id) {
+            res = 1;
+        }
+        // Devuelve el resultado
         return res;
     }
 }
