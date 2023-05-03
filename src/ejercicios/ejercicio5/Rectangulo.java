@@ -78,6 +78,7 @@ public class Rectangulo extends Poligono {
         return " Rectángulo" +
                 " Lado1 " + lado1 + " centímetros" +
                 " Lado2 " + lado2 + " centímetros" +
+                " Área " + area() +
                 super.toString();
     }
 

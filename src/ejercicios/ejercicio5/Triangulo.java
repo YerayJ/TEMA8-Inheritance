@@ -22,7 +22,7 @@ public class Triangulo extends Poligono {
      */
     public Triangulo(double lado1, double lado2, double lado3) {
         // Le pasa por parámetros 4 lados
-        super(4);
+        super(3);
         // Comprueba que los lados no sean 0 o menos
         if (lado1 <= 0) {
             lado1 = 1;
@@ -99,7 +99,8 @@ public class Triangulo extends Poligono {
         return " Tríangulo" +
                 " Lado1 " + lado1 + " centímetros" +
                 " Lado2 " + lado2 + " centímetros" +
-                " Lado2 " + lado3 + " centímetros" +
+                " Lado3 " + lado3 + " centímetros" +
+                " Área " + this.area() +
                 super.toString();
     }
 
@@ -107,8 +108,9 @@ public class Triangulo extends Poligono {
      * Calcula el área del rectángulo
      * @return Devuelve el área
      */
-    @Override
-    double area() {
-        return (lado1+lado2+lado3)/2; // Calcula el área usando la fórmula del Herón
+    public double area() {
+        final double s = (this.lado1 + this.lado2 + this.lado3) / 2.0d;
+
+        return Math.sqrt(s * (s - this.lado1) * (s - this.lado2) * (s - this.lado3));
     }
 }
