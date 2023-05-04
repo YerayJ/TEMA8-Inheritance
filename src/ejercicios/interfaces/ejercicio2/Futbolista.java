@@ -73,27 +73,28 @@ public class Futbolista implements Comparable {
         Futbolista f1 = (Futbolista) o;
 
         // Comparación de los números de camiseta
-        if (this.numCamiseta == f1.numCamiseta) {
+        if (this.numCamiseta == f1.numCamiseta && this.nombre.equals(f1.nombre)) {
             estado = true;
-        }
-        // Si el nombre es distinto
-        if (!this.nombre.equals(f1.nombre)) {
-            estado = false;
         }
         return estado;
     }
 
     public int compareTo(Object o) {
         // Variable que contiene el resultado
-        int res = 0;
+        int res;
 
         // Cast al objeto
         Futbolista f1 = (Futbolista) o;
-
-        if (this.numCamiseta < f) {
-
+        // Comprueba si es mayor
+        if (this.numCamiseta > f1.numCamiseta) {
+            res = 1;
+        } // Comprueba si es menor
+        else if (this.numCamiseta < f1.numCamiseta) {
+            res = -1;
+        } // Comprueba si el nombre es igual con el compareto de las Strings
+        else {
+            res = this.nombre.compareTo(f1.nombre);
         }
-
         return res;
     }
 
