@@ -23,10 +23,11 @@ public abstract class AnimalDomestico implements Animal {
 
     /**
      * Constructor con parámetros
+     *
      * @param nombre Contiene el nombre
-     * @param raza Contiene la raza
-     * @param peso Contiene el peso
-     * @param color Contiene el color
+     * @param raza   Contiene la raza
+     * @param peso   Contiene el peso
+     * @param color  Contiene el color
      */
     public AnimalDomestico(String nombre, String raza, double peso, String color) {
         this.nombre = nombre;
@@ -40,6 +41,7 @@ public abstract class AnimalDomestico implements Animal {
 
     /**
      * Getter
+     *
      * @return Devuelve el nombre
      */
     public String getNombre() {
@@ -48,6 +50,7 @@ public abstract class AnimalDomestico implements Animal {
 
     /**
      * Setter
+     *
      * @param nombre Contiene el nombre
      */
     public void setNombre(String nombre) {
@@ -56,6 +59,7 @@ public abstract class AnimalDomestico implements Animal {
 
     /**
      * Getter
+     *
      * @return Devuelve la raza
      */
     public String getRaza() {
@@ -64,6 +68,7 @@ public abstract class AnimalDomestico implements Animal {
 
     /**
      * Setter
+     *
      * @param raza Contiene la raza
      */
     public void setRaza(String raza) {
@@ -72,6 +77,7 @@ public abstract class AnimalDomestico implements Animal {
 
     /**
      * Getter
+     *
      * @return Devuelve el peso
      */
     public double getPeso() {
@@ -80,6 +86,7 @@ public abstract class AnimalDomestico implements Animal {
 
     /**
      * Setter
+     *
      * @param peso Contiene el peso
      */
     public void setPeso(double peso) {
@@ -88,6 +95,7 @@ public abstract class AnimalDomestico implements Animal {
 
     /**
      * Getter
+     *
      * @return Devuelve el color
      */
     public String getColor() {
@@ -96,6 +104,7 @@ public abstract class AnimalDomestico implements Animal {
 
     /**
      * Setter
+     *
      * @param color Contiene el color
      */
     public void setColor(String color) {
@@ -105,12 +114,27 @@ public abstract class AnimalDomestico implements Animal {
     /**
      * Método para vacunar a un animal
      */
-    public abstract void vacunar();
+    public void vacunar() {
+        System.out.println("\nEl animal está vacunado");
+    }
+
+    /**
+     * Método para que coma un animal
+     */
+    @Override
+    public void comer() {
+        System.out.println("\nEl animal ya ha comido");
+    }
 
     /**
      * Método para que un animal haga caso
      */
-    public abstract void hacerCaso();
+    public abstract boolean hacerCaso();
+
+    /**
+     * Método para que un animal haga caso
+     */
+    public abstract void hacerRuido();
 
     /**
      * Método que indica que está durmiendo
@@ -118,5 +142,14 @@ public abstract class AnimalDomestico implements Animal {
     @Override
     public void dormir() {
         System.out.println("Zzz");
+    }
+
+    @Override
+    public String toString() {
+        return "AnimalDomestico " +
+                "nombre " + nombre + '\'' +
+                ", raza " + raza + '\'' +
+                ", peso " + peso +
+                ", color " + color;
     }
 }
