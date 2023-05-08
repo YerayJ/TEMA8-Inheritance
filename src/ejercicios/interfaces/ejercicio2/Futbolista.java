@@ -3,7 +3,7 @@ package ejercicios.interfaces.ejercicio2;
 /**
  * Clase Futbolista
  */
-public class Futbolista implements Comparable {
+public class Futbolista implements Comparable<Futbolista> {
     /**
      * Contiene el número de la camiseta
      */
@@ -79,12 +79,9 @@ public class Futbolista implements Comparable {
         return estado;
     }
 
-    public int compareTo(Object o) {
+    public int compareTo(Futbolista f1) {
         // Variable que contiene el resultado
         int res;
-
-        // Cast al objeto
-        Futbolista f1 = (Futbolista) o;
         // Comprueba si es mayor
         if (this.numCamiseta > f1.numCamiseta) {
             res = 1;
